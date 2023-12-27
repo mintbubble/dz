@@ -31,7 +31,7 @@
 - streamlit>=1.18.1
 
 ### Визуализация микросервиса
-![Микросервис Streamlit](https://github.com/mintbubble/dz/tree/main/Hackathon/graphs/animation.gif)
+![Микросервис Streamlit](https://s13.gifyu.com/images/SjnrL.gif)
 
 ### Выводы:  
 - Проведен анализ исходных данных о преступности в городе Нью-Йорк
