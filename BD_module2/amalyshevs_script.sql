@@ -1,38 +1,38 @@
 CREATE SCHEMA module2;
 
 CREATE table module2.transaction(
-transaction_id integer PRIMARY KEY,
-product_id integer NOT NULL,
-brand varchar(40) NULL,
-product_line varchar(40) NULL,
-product_class varchar(40) NULL,
-product_size varchar(40) null,
-customer_id integer NULL,
+transaction_id int4 PRIMARY KEY,
+product_id int4 NOT NULL,
+brand varchar(30) NULL,
+product_line varchar(30) NULL,
+product_class varchar(30) NULL,
+product_size varchar(30) null,
+customer_id int4 NULL,
 transaction_date timestamp NOT NULL,
-online_order varchar(40) NULL,
-order_status varchar(40) NOT NULL,
-list_price numeric NOT NULL,
-standard_cost numeric NULL,
+online_order varchar(30) NULL,
+order_status varchar(30) NOT NULL,
+list_price float4 NOT NULL,
+standard_cost float4 NULL,
 FOREIGN KEY(customer_id) REFERENCES module1.customer(customer_id)
 );
 
 
 CREATE table module2.customer(
-customer_id integer PRIMARY KEY,
-first_name varchar(40) NULL,
-last_name varchar(40) NULL,
-gender varchar(40) NULL,
+customer_id int4 PRIMARY KEY,
+first_name varchar(50) NULL,
+last_name varchar(50) NULL,
+gender varchar(30) NULL,
 DOB timestamp NULL,
-job_title varchar(40) NULL,
-job_industry_category varchar(40) NULL,
-wealth_segment varchar(40) NULL,
-deceased_indicator varchar(40) NULL,
-owns_car varchar(40) NULL,
-address varchar(40) NULL,
-postcode integer NULL,
-state varchar(40) NULL,
-country varchar(40) NULL,
-property_valuation integer NULL
+job_title varchar(50) NULL,
+job_industry_category varchar(50) NULL,
+wealth_segment varchar(50) NULL,
+deceased_indicator varchar(50) NULL,
+owns_car varchar(30) NULL,
+address varchar(50) NULL,
+postcode varchar(30) NULL,
+state varchar(30) NULL,
+country varchar(30) NULL,
+property_valuation int4 NULL
 );
 
 
