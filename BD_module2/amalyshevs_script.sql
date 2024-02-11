@@ -37,7 +37,7 @@ property_valuation integer NULL
 
 
 --(1 балл) Вывести все уникальные бренды, у которых стандартная стоимость выше 1500 долларов.
-select distinct brand from module2.transaction where standard_cost>1500;
+select distinct brand from module2.transaction where standard_cost>1500 and brand is not null;
 --(1 балл) Вывести все подтвержденные транзакции за период '2017-04-01' по '2017-04-09' включительно.
 select transaction_id  from module2.transaction where order_status='Approved' and transaction_date between '2017-04-01' and '2017-04-09';
 --(1 балл) Вывести все профессии у клиентов из сферы IT или Financial Services, которые начинаются с фразы 'Senior'.
@@ -59,4 +59,4 @@ where c.job_industry_category='IT' and t.standard_cost =(select max(standard_cos
 --(2 балла) Вывести всех клиентов из сферы IT и Health, у которых есть подтвержденные транзакции за период '2017-07-07' по '2017-07-17'.
 select distinct t.customer_id, c.first_name, c.last_name from module2.transaction t 
 inner join  module2.customer c on t.customer_id = c.customer_id 
-where c.job_industry_category in ('IT','Health') and t.order_status='Approved' and t.transaction_date between '2017-07-07' and '2017-07-17';
+where c.job_industry_category in ('IT','Health') and t.order_status='Approved' and t.transaction_date > '2017-07-07' and t.transaction_date < '2017-07-17';
